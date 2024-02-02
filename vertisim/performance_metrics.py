@@ -736,7 +736,7 @@ class PerformanceMetrics:
         # self.print_aircraft_arrival_queue_count_stats()
         # self.print_aircraft_departure_queue_count_stats()
         self.print_aircraft_holding_times_stats()
-        self.print_average_charge_time()
+        # self.print_average_charge_time()
         self.print_total_simulated_time()
         self.print_total_aircraft_throughput()
         self.print_flight_duration_stats()
