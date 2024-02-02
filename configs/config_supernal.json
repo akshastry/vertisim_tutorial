@@ -1,6 +1,6 @@
 {
     "sim_params": {
-        "max_sim_time": 864000,
+        "max_sim_time": 86400,
         "arrival_priority": 1,
         "departure_priority": 1,
         "simultaneous_taxi_and_take_off": true,

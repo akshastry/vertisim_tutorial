@@ -35,12 +35,12 @@ class VertiportLayout:
         self.terminal_airspace_radius = self.compute_terminal_airspace_radius()
         self.vertiport_element_locations = self.get_structural_entity_locations()
         self.structural_entity_groups = self.get_structural_entity_groups()
-        # save_vertiport_layout_layer_for_unfolded(df1=self.fato_lat_lngs,
-        #                                          df2=self.park_lat_lngs,
-        #                                          df3=self.inters_lat_lngs,
-        #                                          height=self.vertiport_height,
-        #                                          layout_type=self.layout_type,
-        #                                          output_folder_path=self.output_folder_path)
+        save_vertiport_layout_layer_for_unfolded(df1=self.fato_lat_lngs,
+                                                 df2=self.park_lat_lngs,
+                                                 df3=self.inters_lat_lngs,
+                                                 height=self.vertiport_height,
+                                                 layout_type=self.layout_type,
+                                                 output_folder_path=self.output_folder_path)
 
     def import_vertiport_layout(self) -> pd.DataFrame:
         """
