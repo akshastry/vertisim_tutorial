@@ -1,0 +1,3 @@
+recursive-include vertisim/input *
+include README.md
+include LICENSE
