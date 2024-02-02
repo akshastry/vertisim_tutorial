@@ -1,13 +1,13 @@
 {
     "sim_params": {
-        "max_sim_time": 864000,
+        "max_sim_time": 9000000,
         "arrival_priority": 1,
         "departure_priority": 1,
         "simultaneous_taxi_and_take_off": true,
         "num_initial_passengers": 0,
         "random_seed": 42,
-        "logging": true,
-        "log_level": "debug",
+        "logging": false,
+        "log_level": "error",
         "max_passenger_waiting_time": 600,
         "simulation_states": {
             "vertiport_states": [
@@ -30,24 +30,24 @@
                 "sim_time"
             ]
         },
-        "fleet_rebalancing": true,
-        "save_trajectories": true,
+        "fleet_rebalancing": false,
+        "save_trajectories": false,
         "only_aircraft_simulation": false,
         "network_simulation": true,
         "verbose": true,
         "training_data_collection": false
     },
     "sim_mode": {
-        "ondemand": true,
-        "offline_optimization": false,
+        "ondemand": false,
+        "offline_optimization": true,
         "rl": false,
         "client_server": false
     },
     "external_optimization_params": {
-        "flight_duration_constant": null,
-        "charge_assignment_sensitivity": null,
-        "charge_schedule_file_path": null,
-        "flight_schedule_file_path": null,
+        "flight_duration_constant": 600,
+        "charge_assignment_sensitivity": 2.4,
+        "charge_schedule_file_path": "input/aircraft/charge_schedule_15.csv",
+        "flight_schedule_file_path": "input/aircraft/flight_schedule_15.csv",
         "optuna_db_url": "postgresql://emin:emin@localhost/rluam",        
         "num_parallel_envs": 1,
         "soc_increment_per_charge_event": 10,
@@ -89,14 +89,14 @@
         "vertiport_layout_file_path": "input/vertiport_layouts/vertiport_layout_supernal.xlsx",
         "charge_schedule_file_path": null,
         "flight_schedule_file_path": null,
-        "passenger_schedule_file_path": null,
-        "passenger_arrival_rates_path": "input/passenger/passenger_arrival_rates_LAX_DTLA.csv",
+        "passenger_schedule_file_path": "input/passenger/passenger_arrival_process.csv",
+        "passenger_arrival_rates_path": null,
         "autoregressive_demand_files_path": null,
         "demand_probabilities": null,
         "demand_lookahead_time": 600,
         "vertiports": {
             "LAX": {
-                "layout": "clover_1_fato_10_park_lax",
+                "layout": "clover_1_fato_12_park_lax",
                 "holding_unit_capacity": 20,
                 "num_security_check_servers": 10,
                 "num_chargers": 10,
@@ -115,12 +115,12 @@
                     }
                 },
                 "aircraft_arrival_process": {
-                    "num_initial_aircraft_at_vertiport": 7,
+                    "num_initial_aircraft_at_vertiport": 9,
                     "initial_arrival_queue_state": 0
                 }
             },
             "DTLA": {
-                "layout": "clover_1_fato_10_park_dtla",
+                "layout": "clover_1_fato_14_park_dtla",
                 "holding_unit_capacity": 20,
                 "num_security_check_servers": 10,
                 "num_chargers": 10,
@@ -139,7 +139,7 @@
                     }
                 },
                 "aircraft_arrival_process": {
-                    "num_initial_aircraft_at_vertiport": 7,
+                    "num_initial_aircraft_at_vertiport": 10,
                     "initial_arrival_queue_state": 0
                 }
             }

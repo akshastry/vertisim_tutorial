@@ -389,7 +389,6 @@ class AircraftArrivalSetup:
                                                logger=self.logger,
                                                aircraft_logger=self.aircraft_logger)
             )
-            print(f"aircraft {idx} is initiated.")
 
     def initiate_aircraft_arrival(self,
                                   departure_time: int = None,
